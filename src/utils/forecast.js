@@ -43,7 +43,7 @@ const forecast = (latitude, longitude, callback) => {
             const weather_description = traduccion[current_response.weather_descriptions[0]] || current_response.weather_descriptions[0]
 
             //Devolvemos el pronóstico de las coordenadas obtenidas
-            callback(undefined, weather_description + ". Actualmente está a " + current_response.temperature + " grados. Se siente como a " + current_response.feelslike + " grados")
+            callback(undefined, weather_description + ". Actualmente está a " + current_response.temperature + " grados. Se siente como a " + current_response.feelslike + " grados. La humedad es de " + current_response.humidity + "%.")
         }
     })
 }
