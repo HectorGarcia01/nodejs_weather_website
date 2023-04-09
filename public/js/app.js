@@ -24,8 +24,8 @@ weatherForm.addEventListener('submit', (e) => {
     //Limpiamos el contenido del segundo párrafo
     messageTwo.textContent = ''
 
-    // Realiza una solicitud a la URL 'http://localhost:3000/weather?address=!' para obtener datos climáticos
-    fetch('http://localhost:3000/weather?address=' + address).then((response) => {
+    // Realiza una solicitud a la URL '/weather?address' para obtener datos climáticos
+    fetch('/weather?address=' + address).then((response) => {
         response.json().then((data) => {
             //Validamos si obtenemos un error en los datos recibidos
             if (data.error) {

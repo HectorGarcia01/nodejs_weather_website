@@ -16,6 +16,9 @@ const forecast = require('./utils/forecast')
 //Definimos una instancia para Express
 const app = express()
 
+//Definimos el puerto que vamos a utilizar
+const port = process.env.PORT || 3000
+
 //Definimos la ruta al directorio public para los recursos estáticos
 const publicDirectoryPath = path.join(__dirname, '../public')
 
@@ -157,6 +160,6 @@ app.get('*', (req, res) => {
 })
 
 //Iniciamos el servidor en el puerto 3000
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log("El servidor se inició en http://localhost:3000/")
 })
