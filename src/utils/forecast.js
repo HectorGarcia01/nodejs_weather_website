@@ -5,11 +5,14 @@ const request = require('request')
 const traduccion = {
     'Partly cloudy': 'Parcialmente nublado',
     'Overcast': 'Nublado',
+    'Cloudy': 'Nublado',
     'Sunny': 'Soleado',
     'Clear': 'Despejado',
     'Mist': 'Neblina',
     'Haze': 'Neblina',
+    'Fog': 'Neblina',
     'Rain': 'Lluvia',
+    'Light Drizzle, Mist': 'Llovizna',
     'Snow': 'Nieve',
     'Thunderstorm': 'Tormenta'
 }
