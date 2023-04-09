@@ -1,5 +1,3 @@
-console.log("El archivo JavaScript del lado del cliente está cargado")
-
 //Selecciona el elemento form
 const weatherForm = document.querySelector('form')
 
