@@ -1,6 +1,19 @@
 //Cargamos el módulo request
 const request = require('request')
 
+//Definimos un diccionario con la traducción de la descripción del clima
+const traduccion = {
+    'Partly cloudy': 'Parcialmente nublado',
+    'Overcast': 'Nublado',
+    'Sunny': 'Soleado',
+    'Clear': 'Despejado',
+    'Mist': 'Neblina',
+    'Haze': 'Neblina',
+    'Rain': 'Lluvia',
+    'Snow': 'Nieve',
+    'Thunderstorm': 'Tormenta'
+}
+
 //Definimos la función para el pronóstico
 const forecast = (latitude, longitude, callback) => {
     //Asignamos la URL de la API weatherstack con las coordenadas recibidas
@@ -22,8 +35,12 @@ const forecast = (latitude, longitude, callback) => {
         else {
             //Obtenemos los datos de la propiedad current
             const current_response = body.current
+
+            //Traducimos la descripción del clima
+            const weather_description = traduccion[current_response.weather_descriptions[0]] || current_response.weather_descriptions[0]
+
             //Devolvemos el pronóstico de las coordenadas obtenidas
-            callback(undefined, current_response.weather_descriptions[0] + ". Actualmente está a " + current_response.temperature + " grados. Se siente como a " + current_response.feelslike + " grados")
+            callback(undefined, weather_description + ". Actualmente está a " + current_response.temperature + " grados. Se siente como a " + current_response.feelslike + " grados")
         }
     })
 }
